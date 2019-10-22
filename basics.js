@@ -34,20 +34,20 @@ const flashCard = [{
 },
 
 {
-    title : "Know the 1900's",
+    title : "Women Inventors",
     words:{
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":""
+        "MediciJeanne Villepreux-Power": "The aquarium",
+        "Josephine Cochrane": "The dishwasher",
+        "Madam C. J. Walker": "Hair care products",
+        "Grace Hopper": "The Computer",
+        "Marie Van Brittan Brown":"home security systems,",
+        "Patricia Bath":"Laserphaco Probe",
+        "Marie Curie":"Theory of Radioactivity",
+        "Rosalind Franklin":"Rosalind Franklin",
+        "Dr. Shirley Jackson:":"Modern Day Telecommunication",
+        "Maria Beasley":"The Life Raft",
+        "Katharine Burr Blodgett":"Non-reflective Glass",
+        "Hedy Lamarr":"Frequency Hopping” Technology"
 
     }
 },
