@@ -18,23 +18,23 @@ const flashCard = [{
 {
     title : "The Central Dogma",
     words:{
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":""
+        "DNA": "DNA consists of very long molecules that contain nucleotide bases encoding genes.",
+        "Gene": "A sequence of DNA containing instructions for one protein (that may produce a trait; like eye color or lactose persistence).",
+        "Genome": "Total DNA sequence that contains the complete collection of genes that make up an organism's genetic information.",
+        "Chromosomes": "46 chromosomes, 23 pairs (including the sex chromosome). Females are XX and males are XY.",
+        "Karyotype": "The number, arrangement and size of chromosome in a particular organism.",
+        "The Central Dogma of Molecular Biology": "DNA-->mRNA-->Protein",
+        "Steps of the Central Dogma": "Replication, Transcription, Translation",
+        "Intron": "Intervening sequence in an RNA primary transcript and it's edited out (removed)",
+        "Exon":"Expressed sequence, part of the mRNA that is expressed as part of the protein",
+        "Messenger RNA": "A continuous chain of codons that specify a specifies amino acids to be included in the protein.",
+        "Translation": "Translate the mRNA message into a protein sequence",
+        "Transcription":"Transcribe one strand of the DNA as a message"
     }
 },
 
 {
-    title : "See Africa",
+    title : "Know the 1900's",
     words:{
         "":"",
         "":"",
