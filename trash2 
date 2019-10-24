@@ -1,131 +1,103 @@
-console.log('Welcome to the Game of War - AGWUMBA')
-console.log('Here are your champions:')
-console.log('Player 1 with 26 cards and Player 2 with 26 cards')
+    
+const words = ["Africa","Egypt","The Sahara","Nigeria","Lake Victoria","Global Warming","Wild Life","Megafauna","Lake Malawi","WildLife Migration","African elephant","The Nile"]
+const definitions = ["Africa has 54 countries and one “non-self governing territory”, the Western Sahara.",
+"The Pharaonic civilization of ancient Egypt is one of the world’s oldest and longest-lasting civilizations.",
+"The Sahara is the largest desert in the world and is bigger than the continental USA.",
+"Nigeria is fourth largest oil exporter in the world, and Africa’s biggest oil producer with about 2.2 million barrels produced every day.",
+"Lake Victoria is the largest lake in Africa and the second-largest freshwater lake in the world.",
+"Africa has the most extensive biomass burning in the world, yet only emits about 4% of the world’s total carbon dioxide emissions.",
+"Africa has eight of the 11 major biomes and the largest-remaining populations of lion, elephant, rhinoceros, cheetah, hyena, leopard and hundreds of other species.",
+"Megafauna like giraffe, zebra, gorilla, hippopotamus, chimpanzee and wildebeest are unique to the continent.",
+"Lake Malawi has more fish species than any other freshwater system on earth.",
+"The Serengeti (Tanzania) hosts the world’s largest wildlife migration on Earth with over 750,000 zebra marching ahead of 1.2 million wildebeest as they cross this amazing landscape.",
+"Africa is home to the world’s largest living land animal, the African elephant, which can weigh up to 7 tons.",
+"The Nile River is the longest river in the world with a total length of 6,650 kilometres."]
 
-class Card {
-    constructor(word, definition) {
-      this.word = word
-      this.definition = definition
-    }
-}
+const startGame = document.querySelector(".startgame");
+const cardBox = document.createElement("div")
+const cardContainer = document.querySelector("#cardcontainer")
+cardBox.classList.add("card");
+cardBox.setAttribute("id", "showword");
 
-class Deck {
-    constructor() {
-        this.containerElement = containerElement
-        this.flipCards = this.flipCards.bind(this)
-        this.flashCardElement = this.createFlashCard()
-        this.containerElement.append(this.flashCardElement)
-        this.flashCardElement.addEventListner("pointer up", this.flipCards(evt){
-            this.flashCardElement.classlist.toggle("show-word");
-        })
-    }
-
-    getDeck() {
-        const cardValue = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K','A'];
-        const suits = ['hearts', 'spades', 'diamonds', 'clubs'];
-        const ranking = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-        for (let i = 0; i < suits.length; i++) {
-          for (let j = 0; j < cardValue.length; j++) {
-            const newCard = new Card(cardValue[j], suits[i], ranking[j])
-            this.cards.push(newCard);
-          }
-        //   return ('newCard')
-        }
-    }
-
-    shuffleGame() {
-        var shuffledDeck = []
-        for (let i = 0; i < 52; i++) {
-          var deckSize = this.cards.length;
-          var randomNumber = Math.floor(Math.random() * deckSize);
-          var shuffledCard = this.cards.splice(randomNumber, 1)[0];
-          shuffledDeck.push(shuffledCard);
-        }
-        this.cards = shuffledDeck;
-    }
-}
+//Shouldn't be referencing the button, unless you want the content to go INSIDE of the button element
+//startGame.appendChild(cardBox);
 
 
 
-class Game{ 
-    constructor(){
-      this.player1 = []
-      this.player2 = []
-      this.dealCards()
-    }
+let domCardsArray = [];
+for (let i = 0; i < words.length; i++) {
+  
+    let frontText = words[i]
+    let backText = definitions[i]
+    let wordSide = document.createElement("div")
+    wordSide.classList.add("flashcard");
+    wordSide.setAttribute("id", "front-card");
+    cardBox.appendChild(wordSide);
+   
+    wordSide.textContent = frontText
+    console.log(wordSide.textContent)
 
-    dealCards() {
-        this.player1 = gameDeck.cards.slice(0,26)
-        this.player2 = gameDeck.cards.slice(26,52)
-        return (this.player1, this.player2)
-    }
 
-    startGame() {
-        gameDeck.length = 52;
-        while (gameDeck.length > 0){
-            let cardPlay1 = this.player1.shift()
-            console.log(cardPlay1)
-            let cardPlay2 = this.player2.shift()
-            console.log(cardPlay2)
+    let definitionSide = document.createElement("div")
+    definitionSide.classList.add("flashcard");
+    definitionSide.setAttribute("id", "definition");
+    definitionSide.textContent = backText;
+    console.log(definitionSide.textContent)
 
-            if (cardPlay1.ranking > cardPlay2.ranking){
-                this.player1.push(cardPlay1, cardPlay2)
-                console.log ('Player 1 has won this round')
-            }
-            else if (cardPlay2.ranking > cardPlay1.ranking) {
-                this.player2.push(cardPlay1, cardPlay2)
-                console.log ('Player 2 has won this round')
-            }
 
-            else if (cardPlay2.ranking = cardPlay1.ranking) {
-                let cardPlay1a = this.player1.splice(0, 4);
-                console.log (cardPlay1)
-                let cardPlay2a = this.player2.splice(0, 4);
-                console.log (cardPlay2)
-                if (cardPlay2[3].ranking > cardPlay1[3].ranking){
-                    this.player2.push(cardPlay1, cardPlay2, cardPlay1a, cardPlay2a)
-                    console.log('Player 2 has won this round')
-                }
-                else{
-                    this.player1.concat(cardPlay1, cardPlay2, cardPlay1a, cardPlay2a)
-                    console.log('Player 1 has won this round')
-                }
-            }
+    let cardArr = [wordSide, definitionSide];
+    domCardsArray.push(cardArr);
+    console.log(domCardsArray)
+}    
 
-            // else {
-            //     console.log ('I think you just beat the game')//splice//pop//concat 3 cards to cardplay 1 and 2, then do that for the//
-            //     //the fourth card and it's the fouth card that will be compared, as we have coompared the other//
-            //     //guys//
-            // }
-            gameDeck.length--;
-        }
-    }
+// for (let i = 0; i < domCardsArray.length; i++) {
+//     startGame.addEventListener("click", function(evt){
+//         let flashcard = document.createElement("div")
+//         let frontcard = document.createElement("div")
+//         let backcard = document.createElement("div")
+//         flashcard.classList.add("card");
+//         flashcard.id = "";
+//         flashcard.classList.add("front");
+//         flashcard.id = "";
+//         frontcard.textContent = domCardsArray.wordSide[i]
+//         flashcard.classList.add("back");
+//         flashcard.id = "";
+//         backcard.textContent = domCardsArray.definitionSide[i]
+//         flashcard.appendChild(cardContainer)
+//         frontcard.appendChild(flashcard)
+//         backcard.appendChild(flashcard)
+//     })
+// }
 
-    endGame() {
-        if (playGame.player1.length > playGame.player2.length) {
-            console.log(`Player 1 has ${playGame.player1.length} cards, while player 2 has ${playGame.player2.length} cards`)
-            console.log('Player 1 has vanquished player 2')
-        }
-        else {
-            console.log(`Player 2 has ${playGame.player2.length} cards, while player 1 has ${playGame.player1.length} cards`)
-            console.log('Player 2 has vanquished player 1')
-        }
-    }
-}
-const gameDeck = new Deck()
-// // class Randoms{
-console.log(gameDeck.cards)
-gameDeck.shuffleGame();
-console.log(gameDeck.cards)
-const playGame = new Game()
-playGame.dealCards();
-console.log(playGame.player1)
-console.log(playGame.player2)
-playGame.startGame();
-playGame.endGame();
 
-// // let player1 = gameDeck.cards.slice(0,26)
-// // let player2 = gameDeck.cards.slice(26,52)
-// // console.log('player 1 has ', player1.length, ' cards')
 
-// console.log(player1[0])
+
+// startGame.addEventListener("click", function(evt){
+//     domCardsArray.forEach(function(cards){
+//         cardBox.appendChild(cards[0]);
+//         cardBox.appendChild(cards[1]);
+//     })
+            
+//     // this.backText.push(definitionSide)
+// })
+
+// function createFlashCard() {
+    
+
+//     for (let i = 0; i < words.length; i++) {
+//         let frontText = words[i]
+//         for (let j = 0; j < definitions.length; j++) {
+//             let backText = definitions[j]
+            
+//         }
+//         return (cardBox)
+//     }
+//         // flipCard(event) {
+//         // this.flashcardElement.classList.toggle('card');}
+    
+    
+// }
+//     createFlashCard()
+
+
+            
