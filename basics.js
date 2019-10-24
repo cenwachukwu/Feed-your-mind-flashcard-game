@@ -1,5 +1,3 @@
-
-    
 const words = ["Africa","Egypt","The Sahara","Nigeria","Lake Victoria","Global Warming","Wild Life","Megafauna","Lake Malawi","WildLife Migration","African elephant","The Nile"]
 const definitions = ["Africa has 54 countries and one “non-self governing territory”, the Western Sahara.",
 "The Pharaonic civilization of ancient Egypt is one of the world’s oldest and longest-lasting civilizations.",
@@ -13,35 +11,40 @@ const definitions = ["Africa has 54 countries and one “non-self governing terr
 "The Serengeti (Tanzania) hosts the world’s largest wildlife migration on Earth with over 750,000 zebra marching ahead of 1.2 million wildebeest as they cross this amazing landscape.",
 "Africa is home to the world’s largest living land animal, the African elephant, which can weigh up to 7 tons.",
 "The Nile River is the longest river in the world with a total length of 6,650 kilometres."]
-function createFlashCard() {
-    const carddiv = document.querySelector(".cardbox");
-    const cardBox = document.createElement("div")
-    cardBox.classList.add("card");
-    cardBox.setAttribute("id", "showword");
-    carddiv.appendChild(cardBox);
 
-    for (let i = 0; i < words.length; i++) {
-        let frontText = words[i]
-        for (let j = 0; j < definitions.length; j++) {
-            let backText = definitions[j]
-            const wordSide = document.createElement("div")
-            wordSide.classList.add("flashcard");
-            wordSide.setAttribute("id", "front-card");
-            wordSide.textContent = frontText
-            cardBox.appendChild(wordSide);
-            // this.frontText.push(wordSide)
-            const definitionSide = document.createElement("div")
-            definitionSide.classList.add("flashcard");
-            definitionSide.setAttribute("id", "definition");
-            definitionSide.textContent = backText
-            cardBox.appendChild(definitionSide);
-            // this.backText.push(definitionSide)
-        }
-        return (cardBox)
-    }
-        // flipCard(event) {
-        // this.flashcardElement.classList.toggle('card');}
+const startGame = document.querySelector(".startgame");
+const cardContainer = document.querySelector("#cardcontainer")
+const cardBox = document.createElement("div")
+cardBox.classList.add("card");
+cardContainer.appendChild(cardBox)
+
+let flashcardArr = []
+// flashcardArr = 0
+for (let i = 0; i < words.length; i++) {
+    startGame.addEventListener("click", function(evt){
+    let frontText = words[i]
+    let backText = definitions[i]
+    let wordSide = document.createElement("div")
+    wordSide.classList.add("flashcard");
+    wordSide.classList.add("inactive");
+    wordSide.setAttribute("id", "front-card");
+    cardBox.appendChild(wordSide);
+   
+    wordSide.textContent = frontText
+    // console.log(wordSide.textContent)
+
+
+    let definitionSide = document.createElement("div")
+    definitionSide.classList.add("flashcard");
+    definitionSide.setAttribute("id", "definition");
+    definitionSide.classList.add("inactive");
+    definitionSide.textContent = backText;
+    cardBox.appendChild(definitionSide);
+    // console.log(definitionSide.textContent)
+
+    let cardArr = [wordSide, definitionSide];
+    flashcardArr.push(cardArr);
     
-    
-}
-    createFlashCard()
+    console.log(flashcardArr)
+    })
+}    
