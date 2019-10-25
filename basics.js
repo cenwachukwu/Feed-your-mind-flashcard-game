@@ -153,13 +153,13 @@ previous.addEventListener("click", function(evt){
 
 //how to unappend elements from the dom/how to remove an elemnet through dom manioulation
 
-// centraldogma.addEventListener("click", function(evt){ 
-//     flashCard = Object.entries(flashCards[j, 1]) //makes the object into an array so you're able to access it, remember that the value of i and j is 0. 
-//     frontCard2.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
-//     backCard2.textContent = flashCard[i][1]
-//     next.classList.remove("inactive");
-//     central.classList.toggle("inactive")
-// })
+box2.addEventListener("click", function(evt){ 
+    flashCard = Object.entries(flashCards[j, 1]) //makes the object into an array so you're able to access it, remember that the value of i and j is 0. 
+    box2a.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
+    box2b.textContent = flashCard[i][1]
+    next.classList.remove("inactive");
+    
+})
 
 // next.addEventListener("click", function(evt){
 //     evt.preventDefault
