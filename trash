@@ -1,69 +1,201 @@
-const flashCard = [{
-    title : "See Africa",
-    words:{
-        "Africa": "Africa has 54 countries and one “non-self governing territory”, the Western Sahara.",
-        "Egypt": "The Pharaonic civilization of ancient Egypt is one of the world’s oldest and longest-lasting civilizations.",
-        "The Sahara": "The Sahara is the largest desert in the world and is bigger than the continental USA.",
-        "Nigeria": "Nigeria is fourth largest oil exporter in the world, and Africa’s biggest oil producer with about 2.2 million barrels produced every day.",
-        "Lake Victoria": "Lake Victoria is the largest lake in Africa and the second-largest freshwater lake in the world.",
-        "Global Warming": "Africa has the most extensive biomass burning in the world, yet only emits about 4% of the world’s total carbon dioxide emissions.",
-        "Wild Life": "Africa has eight of the 11 major biomes and the largest-remaining populations of lion, elephant, rhinoceros, cheetah, hyena, leopard and hundreds of other species.",
-        "Megafauna": "Megafauna like giraffe, zebra, gorilla, hippopotamus, chimpanzee and wildebeest are unique to the continent.",
-        "Lake Malawi":"Lake Malawi has more fish species than any other freshwater system on earth.",
-        "WildLife Migration": "The Serengeti (Tanzania) hosts the world’s largest wildlife migration on Earth with over 750,000 zebra marching ahead of 1.2 million wildebeest as they cross this amazing landscape.",
-        "African elephant": "Africa is home to the world’s largest living land animal, the African elephant, which can weigh up to 7 tons.",
-        "The Nile": "The Nile River is the longest river in the world with a total length of 6,650 kilometres.",
-    }
+let flashCards = [{
+    "Africa": "Africa has 54 countries and one “non-self governing territory”, the Western Sahara.",
+    "Egypt": "The Pharaonic civilization of ancient Egypt is one of the world’s oldest and longest-lasting civilizations.",
+    "The Sahara": "The Sahara is the largest desert in the world and is bigger than the continental USA.",
+    "Nigeria": "Nigeria is fourth largest oil exporter in the world, and Africa’s biggest oil producer with about 2.2 million barrels produced every day.",
+    "Lake Victoria": "Lake Victoria is the largest lake in Africa and the second-largest freshwater lake in the world.",
+    "Global Warming": "Africa has the most extensive biomass burning in the world, yet only emits about 4% of the world’s total carbon dioxide emissions.",
+    "Wild Life": "Africa has eight of the 11 major biomes and the largest-remaining populations of lion, elephant, rhinoceros, cheetah, hyena, leopard and hundreds of other species.",
+    "Megafauna": "Megafauna like giraffe, zebra, gorilla, hippopotamus, chimpanzee and wildebeest are unique to the continent.",
+    "Lake Malawi": "Lake Malawi has more fish species than any other freshwater system on earth.",
+    "WildLife Migration": "The Serengeti (Tanzania) hosts the world’s largest wildlife migration on Earth with over 750,000 zebra marching ahead of 1.2 million wildebeest as they cross this amazing landscape.",
+    "African elephant": "Africa is home to the world’s largest living land animal, the African elephant, which can weigh up to 7 tons.",
+    "The Nile": "The Nile River is the longest river in the world with a total length of 6,650 kilometres.",
 },
 {
-    title : "The Central Dogma",
-    words:{
-        "DNA": "DNA consists of very long molecules that contain nucleotide bases encoding genes.",
-        "Gene": "A sequence of DNA containing instructions for one protein (that may produce a trait; like eye color or lactose persistence).",
-        "Genome": "Total DNA sequence that contains the complete collection of genes that make up an organism's genetic information.",
-        "Chromosomes": "46 chromosomes, 23 pairs (including the sex chromosome). Females are XX and males are XY.",
-        "Karyotype": "The number, arrangement and size of chromosome in a particular organism.",
-        "The Central Dogma of Molecular Biology": "DNA-->mRNA-->Protein",
-        "Steps of the Central Dogma": "Replication, Transcription, Translation",
-        "Intron": "Intervening sequence in an RNA primary transcript and it's edited out (removed)",
-        "Exon":"Expressed sequence, part of the mRNA that is expressed as part of the protein",
-        "Messenger RNA": "A continuous chain of codons that specify a specifies amino acids to be included in the protein.",
-        "Translation": "Translate the mRNA message into a protein sequence",
-        "Transcription":"Transcribe one strand of the DNA as a message"
-    }
+    "DNA": "DNA consists of very long molecules that contain nucleotide bases encoding genes.",
+    "Gene": "A sequence of DNA containing instructions for one protein (that may produce a trait; like eye color or lactose persistence).",
+    "Genome": "Total DNA sequence that contains the complete collection of genes that make up an organism's genetic information.",
+    "Chromosomes": "46 chromosomes, 23 pairs (including the sex chromosome). Females are XX and males are XY.",
+    "Karyotype": "The number, arrangement and size of chromosome in a particular organism.",
+    "The Central Dogma of Molecular Biology": "DNA-->mRNA-->Protein",
+    "Steps of the Central Dogma": "Replication, Transcription, Translation",
+    "Intron": "Intervening sequence in an RNA primary transcript and it's edited out (removed)",
+    "Exon": "Expressed sequence, part of the mRNA that is expressed as part of the protein",
+    "Messenger RNA": "A continuous chain of codons that specify a specifies amino acids to be included in the protein.",
+    "Translation": "Translate the mRNA message into a protein sequence",
+    "Transcription": "Transcribe one strand of the DNA as a message"
+
 },
 
 {
-    title : "Women Inventors",
-    words:{
-        "MediciJeanne Villepreux-Power": "The aquarium",
-        "Josephine Cochrane": "The dishwasher",
-        "Madam C. J. Walker": "Hair care products",
-        "Grace Hopper": "The Computer",
-        "Marie Van Brittan Brown":"home security systems,",
-        "Patricia Bath":"Laserphaco Probe",
-        "Marie Curie":"Theory of Radioactivity",
-        "Rosalind Franklin":"Rosalind Franklin",
-        "Dr. Shirley Jackson:":"Modern Day Telecommunication",
-        "Maria Beasley":"The Life Raft",
-        "Katharine Burr Blodgett":"Non-reflective Glass"
-    }
+    "MediciJeanne Villepreux-Power": "The aquarium",
+    "Josephine Cochrane": "The dishwasher",
+    "Madam C. J. Walker": "Hair care products",
+    "Grace Hopper": "The Computer",
+    "Marie Van Brittan Brown": "home security systems,",
+    "Patricia Bath": "Laserphaco Probe",
+    "Marie Curie": "Theory of Radioactivity",
+    "Rosalind Franklin": "Rosalind Franklin",
+    "Dr. Shirley Jackson:": "Modern Day Telecommunication",
+    "Maria Beasley": "The Life Raft",
+    "Katharine Burr Blodgett": "Non-reflective Glass"
 },
 {
-    title : "See Africa",
-    words:{
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":"",
-        "":""
-    }
+    // title : "See Africa",
+    // words:{
+    //     "":"",
+    //     "":"",
+    //     "":"",
+    //     "":"",
+    //     "":"",
+    //     "":"",
+    //     "":"",
+    //     "":"",
+    //     "":"",
+    //     "":"",
+    //     "":"",
+    //     "":""
+    // }
 }
 ]
+let i = 0 //this is serving as a constant for our index as we are going to use this to manipultae the dom
+let j = 0
+
+// next = i + 1
+// previous = i - 1
+
+function nextItem() {
+    i = i + 1; // increase i by one
+    i = i % flashCard.length; // if we've gone too high, start from `0` again
+    return flashCard[i]; // give us back the item of where we are now
+}
+
+function prevItem() {
+    if (i === 0) { // i would become 0
+        i = flashCard.length; // so put it at the other end of the array
+    }
+    i = i - 1; // decrease by one
+    return flashCard[i]; // give us back the item of where we are now
+}
+function toggle(){
+
+}
+
+
+
+const cardContainer = document.querySelector("#cardcontainer")
+const frontCard = document.querySelector(".front-card")
+const backCard = document.querySelector(".back-card")
+const frontCard2 = document.querySelector(".front-card2")
+const backCard2 = document.querySelector(".back-card2")
+const frontCard3 = document.querySelector(".front-card3")
+const backCard3 = document.querySelector(".back-card3")
+const africa = document.querySelector(".africa")
+const femaleInventors = document.querySelector(".femaleInventors")
+const centraldogma = document.querySelector(".centraldogma")
+const afric = document.querySelector(".afric")
+const central = document.querySelector(".central")
+const women = document.querySelector(".women")
+// const buttons = document.querySelector(".buttons")
+const next = document.querySelector(".next")
+const previous = document.querySelector(".previous")
+
+
+africa.addEventListener("click", function(evt){
+    flashCard = Object.entries(flashCards[j]) //makes the object into an array so you're able to access it, remember that the value of i and j is 0. 
+    frontCard.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
+    backCard.textContent = flashCard[i][1]
+    next.classList.remove("inactive");
+    africa.disabled = true
+    femaleInventors.disabled = true
+    centraldogma.disabled = true
+})
+cardContainer.addEventListener("click", function(evt){
+    evt.preventDefault
+    // flashCard = Object.entries(flashCards[j]) 
+    // console.log(flashCard[j])
+    backCard.classList.toggle("inactive"); //this does the opposite, adding the back of the card to the view and removing the class of inactive we placed on it earlier
+    frontCard.classList.toggle("inactive"); //this adds a class of inactive(make this in css) to the front of the card, removing it from view
+
+})
+next.addEventListener("click", function(evt){
+    evt.preventDefault
+    nextItem()
+    // flashCard = Object.entries(flashCards[j])
+    frontCard.textContent = flashCard[i][0]
+    backCard.textContent = flashCard[i][1]
+    previous.classList.remove("inactive");
+    africa.disabled = false
+    femaleInventors.disabled = false
+    centraldogma.disabled = false
+})
+previous.addEventListener("click", function(evt){
+    evt.preventDefault
+    prevItem()
+    frontCard.textContent = flashCard[i][0]
+    backCard.textContent = flashCard[i][1]
+})
+
+//how to unappend elements from the dom/how to remove an elemnet through dom manioulation
+
+// centraldogma.addEventListener("click", function(evt){ 
+//     flashCard = Object.entries(flashCards[j, 1]) //makes the object into an array so you're able to access it, remember that the value of i and j is 0. 
+//     frontCard2.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
+//     backCard2.textContent = flashCard[i][1]
+//     next.classList.remove("inactive");
+//     central.classList.toggle("inactive")
+// })
+
+// next.addEventListener("click", function(evt){
+//     evt.preventDefault
+//     nextItem()
+//     // flashCard = Object.entries(flashCards[j,1])
+//     frontCard2.textContent = flashCard[i][0]
+//     backCard2.textContent = flashCard[i][1]
+//     previous.classList.remove("inactive");
+// })
+
+// previous.addEventListener("click", function(evt){
+//     evt.preventDefault
+//     prevItem()
+//     // flashCard = Object.entries(flashCards[j,1])
+//     frontCard2.textContent = flashCard[i][0]
+//     backCard2.textContent = flashCard[i][1]
+// })
+
+// femaleInventors.addEventListener("click", function (evt) {
+//     flashCard = Object.entries(flashCards[j, 2]) //makes the object into an array so you're able to access it, remember that the value of i and j is 0. 
+//     frontCard3.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
+//     backCard3.textContent = flashCard[i][1]
+//     next.classList.remove("inactive");
+//     women.classList.remove("inactive")
+
+// })
+
+
+
+// next.addEventListener("click", function (evt) {
+//     evt.preventDefault
+//     nextItem()
+//     flashCard = Object.entries(flashCards[j, 2])
+//     frontCard3.textContent = flashCard[i][0]
+//     backCard3.textContent = flashCard[i][1]
+//     previous.classList.remove("inactive");
+// })
+
+// previous.addEventListener("click", function (evt) {
+//     evt.preventDefault
+//     prevItem()
+//     flashCard = Object.entries(flashCards[j, 2])
+//     frontCard3.textContent = flashCard[i][0]
+//     backCard3.textContent = flashCard[i][1]
+// })
+
+
+
+
+
+
+
+// flashCard = Object.entries(flashCards[j, 1])

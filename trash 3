@@ -1,76 +1,48 @@
-class Card {
-    constructor(word, definition) {
-      this.word = word
-      this.definition = definition
-    }
-}
-
-class Deck {
-    constructor() {
-        // this.containerElement = containerElement
-        // this.flipCards = this.flipCards.bind(this)
-        this.flashCardElement = this.createFlashCard()
-        // this.containerElement.append(this.flashCardElement)
-        // this.flashCardElement.addEventListner("pointer up", this.flipCards(evt){
-        //     this.flashCardElement.classlist.toggle("show-word");
-        // })
-    }
-
-    createFlashCard() {
-        const words = ["Africa","Egypt","The Sahara","Nigeria","Lake Victoria","Global Warming","Wild Life","Megafauna","Lake Malawi","WildLife Migration","African elephant","The Nile"]
-const definition = ["Africa has 54 countries and one “non-self governing territory”, the Western Sahara.",
-"The Pharaonic civilization of ancient Egypt is one of the world’s oldest and longest-lasting civilizations.",
-"The Sahara is the largest desert in the world and is bigger than the continental USA.",
-"Nigeria is fourth largest oil exporter in the world, and Africa’s biggest oil producer with about 2.2 million barrels produced every day.",
-"Lake Victoria is the largest lake in Africa and the second-largest freshwater lake in the world.",
-"Africa has the most extensive biomass burning in the world, yet only emits about 4% of the world’s total carbon dioxide emissions.",
-"Africa has eight of the 11 major biomes and the largest-remaining populations of lion, elephant, rhinoceros, cheetah, hyena, leopard and hundreds of other species.",
-"Megafauna like giraffe, zebra, gorilla, hippopotamus, chimpanzee and wildebeest are unique to the continent.",
-"Lake Malawi has more fish species than any other freshwater system on earth.",
-"The Serengeti (Tanzania) hosts the world’s largest wildlife migration on Earth with over 750,000 zebra marching ahead of 1.2 million wildebeest as they cross this amazing landscape.",
-"Africa is home to the world’s largest living land animal, the African elephant, which can weigh up to 7 tons.",
-"The Nile River is the longest river in the world with a total length of 6,650 kilometres."]
-        for (let i = 0; i < words.length; i++) {
-          for (let j = 0; j < definition.length; j++) {
-            // const newCard = new Card(cardValue[j], suits[i], ranking[j])
-            // this.cards.push(newCard);
-            const cardBox = document.createElement("div")
-            cardBox.classList.add("card");
-            cardBox.setAttribute("id", "showword");
-            const wordSide = document.createElement("p")
-            wordSide.classList.add("flashcard");
-            wordSide.setAttribute("id", "word");
-            wordSide.textContent = [i]
-            const definitionSide = document.createElement("p")
-            definitionSide.classList.add("flashcard");
-            definitionSide.setAttribute("id", "definition");
-            definitionSide.textContent = [j]
-
-            var opt = options[i];
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="basics.css">
+    <meta name="description" content="flashcard-game">
+    <title>Feed your mind</title>
+</head>
+<body>
+    <h1>Feed your mind; A flash card story.</h1>
+    <button class="startgame">Let's being</button>
+    <button class="africa">Africa</button>
+    <button class="femaleInventors">Female Inventors</button>
+    <button class="centraldogma">Central dogma</button>
+    <div>
+        <div class="inactive" id="cardcontainer">
+            <div class="afric">
+                <div class="flash-card front-card"></div>
+                <div class="flash-card back-card inactive"></div>
+            </div>
+            <div class="central inactive">
+                    <div class="flash-card front-card2"></div>
+                    <div cßlass="flash-card back-card2 inactive"></div>
+            </div>
+            <div class="women inactive">
+                    <div class="flash-card front-card3"></div>
+                    <div class="flash-card back-card3 inactive"></div>
+            </div>
             
-            // const newCard = new Card(, )
-            // console.log(newCard)
-            
-            cardBox.appendChild(wordSide);
-            cardBox.appendChild(definitionSide);
-            return (cardBox)
-          }
-        //   return ('newCard')
-        }
-    }
 
-    // shuffleGame() {
-    //     var shuffledDeck = []
-    //     for (let i = 0; i < ; i++) {
-    //       var deckSize = this.cards.length;
-    //       var randomNumber = Math.floor(Math.random() * deckSize);
-    //       var shuffledCard = this.cards.splice(randomNumber, 1)[0];
-    //       shuffledDeck.push(shuffledCard);
-    //     }
-    //     this.cards = shuffledDeck;
-    // }
-}
-const gameDeck = new Deck()
+        </div>
+        <div class="buttons">
+            <button class="previous inactive">Previous</button>
+            <button class="next inactive">Next</button>
+        </div>
+        <div>
+            <button class="know">I Know This</button>
+            <button class="dont-know">I Didnt know this</button>
+        </div>
+    </div>
+
+    <script src="basics.js"></script>     
+</body>
+</html>
+
+

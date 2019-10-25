@@ -59,6 +59,8 @@ let flashCards = [{
     // }
 }
 ]
+let i = 0 //this is serving as a constant for our index as we are going to use this to manipultae the dom
+let j = 0
 
 // next = i + 1
 // previous = i - 1
@@ -76,63 +78,95 @@ function prevItem() {
     i = i - 1; // decrease by one
     return flashCard[i]; // give us back the item of where we are now
 }
+function toggle(){
 
-const cardContainer = document.querySelector("#cardcontainer")
-const frontCard = document.querySelector(".front-card")
-const backCard = document.querySelector(".back-card")
-const africa = document.querySelector(".africa")
-const femaleInventors = document.querySelector(".femaleInventors")
-const centraldogma = document.querySelector(".centraldogma")
+}
+
+// box1.disabled = true
+//     femaleInventors.disabled = true
+//     centraldogma.disabled = true
+
+
+const cardContainer = document.querySelectorAll(".cardcontainer")
+// const frontCard = document.querySelector(".front-card")
+// const backCard = document.querySelector(".back-card")
+const box1 = document.querySelector(".box1")
+const box1a = document.querySelector(".box1a")
+const box1b = document.querySelector(".box1b")
+const box2 = document.querySelector(".box2")
+const box2a = document.querySelector(".box2a")
+const box2b = document.querySelector(".box2b")
+const box3 = document.querySelector(".box3")
+const box3a = document.querySelector(".box3a")
+const box3b = document.querySelector(".box3b") 
+// const women = document.querySelector(".women")
 // const buttons = document.querySelector(".buttons")
 const next = document.querySelector(".next")
 const previous = document.querySelector(".previous")
+const remove = document.querySelector("button")
 
-let i = 0 //this is serving as a constant for our index as we are going to use this to manipultae the dom
-let j = 0
-africa.addEventListener("click", function(evt){
-    
-    flashCard = Object.entries(flashCards[j]) //makes the object into an array so you're able to access it, remember that the value of i and j is 0. 
-    frontCard.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
-    backCard.textContent = flashCard[i][1]
-    next.classList.remove("inactive");
-})
-cardContainer.addEventListener("click", function(evt){
+
+for (let k = 0; k < cardContainer.length; k++){
+    cardContainer[k].addEventListener("click", function(evt){
     evt.preventDefault
-    // flashCard = Object.entries(flashCards[j]) 
-    // console.log(flashCard[j])
-    backCard.classList.toggle("inactive"); //this does the opposite, adding the back of the card to the view and removing the class of inactive we placed on it earlier
-    frontCard.classList.toggle("inactive"); //this adds a class of inactive(make this in css) to the front of the card, removing it from view
+    for (let l = 0; l < cardContainer.length; l++){
+        cardContainer[l].classList.add("inactive"); //here we are making everything inactive 
+        cardContainer[l].classList.remove("active")
+    }
+    evt.target.classList.remove("inactive");
+    console.log(evt.target)
+    evt.target.classList.add("active")  
+    })
+}
 
+remove.addEventListener("click", function(evt){
+    for(let z = 0; z < cardContainer.length; z++){
+        cardContainer[z].classList.remove("inactive"); //here we are making everything inactive 
+        cardContainer[z].classList.remove("active")
+    }
 })
+
+
+box1.addEventListener("click", function(evt){
+    flashCard = Object.entries(flashCards[j]) //makes the object into an array so you're able to access it, remember that the value of i and j is 0. 
+    box1a.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
+    box1b.textContent = flashCard[i][1]
+    next.classList.remove("inactive");
+    
+})
+
 next.addEventListener("click", function(evt){
     evt.preventDefault
     nextItem()
     // flashCard = Object.entries(flashCards[j])
-    frontCard.textContent = flashCard[i][0]
-    backCard.textContent = flashCard[i][1]
+    box1a.textContent = flashCard[i][0]
+    box1b.textContent = flashCard[i][1]
     previous.classList.remove("inactive");
 })
+
 previous.addEventListener("click", function(evt){
     evt.preventDefault
     prevItem()
-    frontCard.textContent = flashCard[i][0]
-    backCard.textContent = flashCard[i][1]
+    box1a.textContent = flashCard[i][0]
+    box1b.textContent = flashCard[i][1]
 })
 
+//how to unappend elements from the dom/how to remove an elemnet through dom manioulation
+
 // centraldogma.addEventListener("click", function(evt){ 
-//     africa.classList.add("inactive");
 //     flashCard = Object.entries(flashCards[j, 1]) //makes the object into an array so you're able to access it, remember that the value of i and j is 0. 
-//     frontCard.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
-//     backCard.textContent = flashCard[i][1]
+//     frontCard2.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
+//     backCard2.textContent = flashCard[i][1]
 //     next.classList.remove("inactive");
+//     central.classList.toggle("inactive")
 // })
 
 // next.addEventListener("click", function(evt){
 //     evt.preventDefault
 //     nextItem()
 //     // flashCard = Object.entries(flashCards[j,1])
-//     frontCard.textContent = flashCard[i][0]
-//     backCard.textContent = flashCard[i][1]
+//     frontCard2.textContent = flashCard[i][0]
+//     backCard2.textContent = flashCard[i][1]
 //     previous.classList.remove("inactive");
 // })
 
@@ -140,32 +174,27 @@ previous.addEventListener("click", function(evt){
 //     evt.preventDefault
 //     prevItem()
 //     // flashCard = Object.entries(flashCards[j,1])
-//     frontCard.textContent = flashCard[i][0]
-//     backCard.textContent = flashCard[i][1]
+//     frontCard2.textContent = flashCard[i][0]
+//     backCard2.textContent = flashCard[i][1]
 // })
 
 // femaleInventors.addEventListener("click", function (evt) {
 //     flashCard = Object.entries(flashCards[j, 2]) //makes the object into an array so you're able to access it, remember that the value of i and j is 0. 
-//     frontCard.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
-//     backCard.textContent = flashCard[i][1]
+//     frontCard3.textContent = flashCard[i][0]  //now you can access the array index and make the text content of the front and back card different things 
+//     backCard3.textContent = flashCard[i][1]
 //     next.classList.remove("inactive");
-// })
-
-// cardContainer.addEventListener("click", function (evt) {
-//     evt.preventDefault
-//     // flashCard = Object.entries(flashCards[j]) 
-//     // console.log(flashCard[j])
-//     backCard.classList.toggle("inactive"); //this does the opposite, adding the back of the card to the view and removing the class of inactive we placed on it earlier
-//     frontCard.classList.toggle("inactive"); //this adds a class of inactive(make this in css) to the front of the card, removing it from view
+//     women.classList.remove("inactive")
 
 // })
+
+
 
 // next.addEventListener("click", function (evt) {
 //     evt.preventDefault
 //     nextItem()
 //     flashCard = Object.entries(flashCards[j, 2])
-//     frontCard.textContent = flashCard[i][0]
-//     backCard.textContent = flashCard[i][1]
+//     frontCard3.textContent = flashCard[i][0]
+//     backCard3.textContent = flashCard[i][1]
 //     previous.classList.remove("inactive");
 // })
 
@@ -173,8 +202,8 @@ previous.addEventListener("click", function(evt){
 //     evt.preventDefault
 //     prevItem()
 //     flashCard = Object.entries(flashCards[j, 2])
-//     frontCard.textContent = flashCard[i][0]
-//     backCard.textContent = flashCard[i][1]
+//     frontCard3.textContent = flashCard[i][0]
+//     backCard3.textContent = flashCard[i][1]
 // })
 
 
