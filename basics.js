@@ -159,12 +159,10 @@ function loadCard() {
     backCard.textContent = flashCard[i][1]
 }
 function toggle(){
-
+    h3.style.display = 'none';
 }
 
 const cardContainer = document.querySelectorAll(".cardcontainer")
-// const frontCard = document.querySelector(".front-card")
-// const backCard = document.querySelector(".back-card")
 const box1 = document.querySelector(".box1")
 const box1a = document.querySelector(".box1a")
 const box1b = document.querySelector(".box1b")
@@ -192,31 +190,29 @@ const box8b = document.querySelector(".box8b")
 const box9 = document.querySelector(".box9")
 const box9a = document.querySelector(".box9a")
 const box9b = document.querySelector(".box9b") 
-const next = document.querySelector(".next")
+const next = document.querySelector(".next") 
 const previous = document.querySelector(".previous")
 const remove = document.querySelector("button")
-
 
 for (let k = 0; k < cardContainer.length; k++){
     cardContainer[k].addEventListener("click", function(evt){
     evt.preventDefault
-    for (let l = 0; l < cardContainer.length; l++){
-        cardContainer[l].classList.add("inactive"); //here we are making everything inactive 
-        cardContainer[l].classList.remove("active")
-    }
-    evt.target.classList.remove("inactive");
-    console.log(evt.target)
-    evt.target.classList.add("active")  
+    let entry = evt.target
+        for (let l = 0; l < cardContainer.length; l++){
+            let container = cardContainer[l].srcElement
+            if (entry !== container ){
+            cardContainer[l].classList.add("inactive")
+            }
+            evt.target.classList.remove("inactive");
+        }
     })
 }
-
 remove.addEventListener("click", function(evt){
     for(let z = 0; z < cardContainer.length; z++){
         cardContainer[z].classList.remove("inactive"); //here we are making everything inactive 
         cardContainer[z].classList.remove("active")
     }
 })
-
 
 box1.addEventListener("click", function(evt){
     evt.preventDefault
@@ -226,8 +222,6 @@ box1.addEventListener("click", function(evt){
     backCard = box1b
     loadCard()
     next.classList.remove("inactive");
-    console.log(evt.target.children[0].textContent)
-    console.log(evt.target.children[1].textContent)
 })
 box2.addEventListener("click", function(evt){
     evt.preventDefault
@@ -237,8 +231,6 @@ box2.addEventListener("click", function(evt){
     backCard = box2b
     loadCard()
     next.classList.remove("inactive");
-    console.log(evt.target.children[0].textContent)
-    console.log(evt.target.children[1].textContent)
 })
 box3.addEventListener("click", function(evt){
     evt.preventDefault
@@ -248,8 +240,8 @@ box3.addEventListener("click", function(evt){
     backCard = box3b
     loadCard()
     next.classList.remove("inactive");
-    console.log(evt.target.children[0].textContent)
-    console.log(evt.target.children[1].textContent)
+    // console.log(evt.target.children[0].textContent)
+    // console.log(evt.target.children[1].textContent)
 })
 box4.addEventListener("click", function(evt){
     evt.preventDefault
@@ -259,8 +251,8 @@ box4.addEventListener("click", function(evt){
     backCard = box4b
     loadCard()
     next.classList.remove("inactive");
-    console.log(evt.target.children[0].textContent)
-    console.log(evt.target.children[1].textContent)
+    // console.log(evt.target.children[0].textContent)
+    // console.log(evt.target.children[1].textContent)
 })
 box5.addEventListener("click", function(evt){
     evt.preventDefault
@@ -270,8 +262,8 @@ box5.addEventListener("click", function(evt){
     backCard = box5b
     loadCard()
     next.classList.remove("inactive");
-    console.log(evt.target.children[0].textContent)
-    console.log(evt.target.children[1].textContent)
+    // console.log(evt.target.children[0].textContent)
+    // console.log(evt.target.children[1].textContent)
 })
 box6.addEventListener("click", function(evt){
     evt.preventDefault
@@ -281,8 +273,8 @@ box6.addEventListener("click", function(evt){
     backCard = box6b
     loadCard()
     next.classList.remove("inactive");
-    console.log(evt.target.children[0].textContent)
-    console.log(evt.target.children[1].textContent)
+    // console.log(evt.target.children[0].textContent)
+    // console.log(evt.target.children[1].textContent)
 })
 box7.addEventListener("click", function(evt){
     evt.preventDefault
@@ -292,8 +284,8 @@ box7.addEventListener("click", function(evt){
     backCard = box7b
     loadCard()
     next.classList.remove("inactive");
-    console.log(evt.target.children[0].textContent)
-    console.log(evt.target.children[1].textContent)
+    // console.log(evt.target.children[0].textContent)
+    // console.log(evt.target.children[1].textContent)
 })
 box8.addEventListener("click", function(evt){
     evt.preventDefault
@@ -303,8 +295,8 @@ box8.addEventListener("click", function(evt){
     backCard = box8b
     loadCard()
     next.classList.remove("inactive");
-    console.log(evt.target.children[0].textContent)
-    console.log(evt.target.children[1].textContent)
+    // console.log(evt.target.children[0].textContent)
+    // console.log(evt.target.children[1].textContent)
 })
 box9.addEventListener("click", function(evt){
     evt.preventDefault
@@ -314,8 +306,8 @@ box9.addEventListener("click", function(evt){
     backCard = box9b
     loadCard()
     next.classList.remove("inactive");
-    console.log(evt.target.children[0].textContent)
-    console.log(evt.target.children[1].textContent)
+    // console.log(evt.target.children[0].textContent)
+    // console.log(evt.target.children[1].textContent)
 })
 
 next.addEventListener("click", function(evt){

@@ -103,20 +103,46 @@ h3{
     border-color: rgb(187, 221, 63);
     padding: 35px;
     font-size: 35px;
+    overflow: hidden;
     /* margin: 16pxauto; */
 }
 
 .back-card{
     transform: rotateY(180deg);
-    background-color: rgb(10, 47, 78);
+    background-color: rgba(58, 120, 170, 0.65);
     border-color: rgb(187, 221, 63);
-    padding: 75px 10px 0 5px;
+    padding: 50px 10px 0 5px;
+}
+
+button{
+    background-color: black;
+    height: 35px;
+    width: 75px;
+    color: white;
+    margin-top: 60px;
+    border-radius: 16px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: rgb(187, 221, 63);
+}
+
+.buttontop{
+    margin: 10px 0 25px 0;
 }
 
 .buttons{
-    grid-column: 4 / -4;
+    /* background-color: black; */
+    /* grid-column: 4 / -4;
+    grid-gap: 10px; */
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    align-content: center;
+    justify-items: center;
+    justify-content: space-around;
+    margin-top: 75px auto;
+    /* height: 25px;
+    width: 75px; */
+    
 }
 
 .inactive {
@@ -127,6 +153,7 @@ h3{
     margin: 45px auto;
     padding: 45px 0;
 }
+
 
 /* @media (max-width: 600px) {
     .game-container {
