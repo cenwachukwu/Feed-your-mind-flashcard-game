@@ -7,11 +7,16 @@ body{
     padding: 0;
     text-align: center;
     background-color: rgba(0216, 225, 240, .75);
+    
 }
 
 h1{
     margin: 0;
     font-size: 45px;
+}
+
+h3{
+    color: white;
 }
 
 .click-text{
@@ -96,14 +101,16 @@ h1{
 
 .front-card{
     border-color: rgb(187, 221, 63);
-    padding: 25px;
+    padding: 35px;
+    font-size: 35px;
+    /* margin: 16pxauto; */
 }
 
 .back-card{
     transform: rotateY(180deg);
     background-color: rgb(10, 47, 78);
     border-color: rgb(187, 221, 63);
-    padding: 25px;
+    padding: 75px 10px 0 5px;
 }
 
 .buttons{
